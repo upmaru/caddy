@@ -30,6 +30,8 @@ source: |
   ../../../$pkgname.initd
 
 package: |
+  ls
+
   install -Dm755 bin/caddy "$pkgdir"/usr/sbin/caddy
   setcap cap_net_bind_service=+ep "$pkgdir"/usr/sbin/caddy
 
