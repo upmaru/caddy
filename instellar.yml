@@ -16,8 +16,9 @@ build:
 run: 
   name: uplink-caddy
   command:
-    call: 'caddy'
+    call: '--'
     variations:
+      checkconfig: validate
 
 hook:
   post-install: |
