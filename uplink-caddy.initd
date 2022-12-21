@@ -8,7 +8,7 @@ description_reload="Reload configuration without downtime"
 
 : ${caddy_opts:="--config /etc/caddy/Caddyfile --adapter caddyfile"}
 
-command=/usr/sbin/caddy
+command=/var/lib/uplink-caddy/bin/caddy
 command_args="run $caddy_opts"
 command_user=caddy:caddy
 extra_commands="checkconfig"

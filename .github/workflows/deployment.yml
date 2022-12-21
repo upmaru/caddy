@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: 'Pakman'
-        uses: upmaru/pakman@alpine-3.16
+        uses: upmaru/pakman@develop
         with:
           command: 'bootstrap'
         env:
@@ -25,7 +25,7 @@ jobs:
           ABUILD_PUBLIC_KEY: ${{secrets.ABUILD_PUBLIC_KEY}}
 
       - name: 'Build APK'
-        uses: upmaru/pakman@alpine-3.16
+        uses: upmaru/pakman@develop
         with:
           entrypoint: /var/lib/pakman/bin/build.sh
 
