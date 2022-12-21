@@ -1,0 +1,35 @@
+name: 'Deployment'
+
+on:
+  workflow_run: 
+    workflows: ["CI"]
+    branches: [master, develop]
+    types: 
+      - completed
+
+jobs:
+  build_and_deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-20.04
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: 0
+
+      - name: 'Pakman'
+        uses: upmaru/pakman@alpine-3.16
+        with:
+          command: 'bootstrap'
+        env:
+          ABUILD_PRIVATE_KEY: ${{secrets.ABUILD_PRIVATE_KEY}}
+          ABUILD_PUBLIC_KEY: ${{secrets.ABUILD_PUBLIC_KEY}}
+
+      - name: 'Build APK'
+        uses: upmaru/pakman@alpine-3.16
+        with:
+          entrypoint: /var/lib/pakman/bin/build.sh
+
+
