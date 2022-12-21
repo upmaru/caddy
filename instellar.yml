@@ -11,10 +11,7 @@ build:
   command: |
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 
-    which go
-    find / -name xcaddy
-
-    go/bin/xcaddy build --with github.com/ss098/certmagic-s3
+    ~/go/bin/xcaddy build --with github.com/ss098/certmagic-s3
 
 run: 
   name: uplink-caddy
