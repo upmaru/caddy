@@ -12,7 +12,6 @@ build:
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 
     mkdir build
-    mv uplink-caddy.initd ./build
 
     ~/go/bin/xcaddy build --output ./build/caddy --with github.com/ss098/certmagic-s3
 
