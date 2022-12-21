@@ -25,16 +25,14 @@ run:
       checkconfig: validate
 
 
-source:
-  paths: |
-    Caddyfile
-    $pkgname.initd
+source: |
+  Caddyfile
+  $pkgname.initd
 
-package:
-  command: |
-    install -Dm755 bin/caddy "$pkgdir"/usr/sbin/caddy
-	  setcap cap_net_bind_service=+ep "$pkgdir"/usr/sbin/caddy
+package: |
+  install -Dm755 bin/caddy "$pkgdir"/usr/sbin/caddy
+  setcap cap_net_bind_service=+ep "$pkgdir"/usr/sbin/caddy
 
-	  install -Dm755 "$srcdir"/$pkgname.initd "$pkgdir"/etc/init.d/$pkgname
-	  install -Dm644 "$srcdir"/Caddyfile "$pkgdir"/etc/$pkgname/Caddyfile
+  install -Dm755 "$srcdir"/$pkgname.initd "$pkgdir"/etc/init.d/$pkgname
+  install -Dm644 "$srcdir"/Caddyfile "$pkgdir"/etc/$pkgname/Caddyfile
 
