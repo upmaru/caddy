@@ -3,7 +3,9 @@ type: 'custom'
 dependencies:
   build:
     - go
+    - libcap
   runtime:
+    - ca-certificates
     - uplink-caddy-openrc
     
 stack: alpine/3.14
