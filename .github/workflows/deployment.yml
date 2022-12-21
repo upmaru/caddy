@@ -13,7 +13,6 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 0
 
       - name: 'Pakman'
@@ -35,13 +34,11 @@ jobs:
           args: zip -r packages.zip /github/home/packages
 
       - name: 'Create Deployment'
-        uses: upmaru/pakman@alpine-3.14
+        uses: upmaru/pakman@develop
         with:
           command: 'create_deployment'
           archive: 'packages.zip'
         env:
-          WORKFLOW_REF: ${{ github.event.workflow_run.head_branch }}
-          WORKFLOW_SHA: ${{ github.event.workflow_run.head_sha }}
           INSTELLAR_PACKAGE_TOKEN: ${{secrets.INSTELLAR_PACKAGE_TOKEN}}
           INSTELLAR_AUTH_TOKEN: ${{secrets.INSTELLAR_AUTH_TOKEN}}
 
