@@ -2,6 +2,7 @@ dependencies:
   build:
     - go
   runtime:
+    - ca-certificates
     - uplink-caddy-openrc
     
 stack: alpine/3.14
@@ -24,17 +25,16 @@ run:
 
 hook:
   post-install: |
-    rc-update add caddy
-    rc-update add uplink
+    rc-update add uplink-caddy
 
   pre-upgrade: |
-    rc-service uplink stop
+    rc-service uplink-caddy stop
 
   post-upgrade: |
-    rc-service uplink start
+    rc-service uplink-caddy start
 
   post-deinstall: |
-    rc-service uplink stop
-    rc-update del uplink
+    rc-service uplink-caddy stop
+    rc-update del uplink-caddy
 
 
