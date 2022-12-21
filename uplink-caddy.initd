@@ -15,24 +15,24 @@ extra_commands="checkconfig"
 extra_started_commands="reload"
 
 depend() {
-	need net localmount
-	after firewall
+  need net localmount
+  after firewall
 }
 
 checkconfig() {
-	ebegin "Checking configuration for $name"
-	su ${command_user%:*} -s /bin/sh -c "$command validate $caddy_opts"
-	eend $?
+  ebegin "Checking configuration for $name"
+  su ${command_user%:*} -s /bin/sh -c "$command validate $caddy_opts"
+  eend $?
 }
 
 reload() {
-	ebegin "Reloading $name"
-	su ${command_user%:*} -s /bin/sh -c "$command reload $caddy_opts"
-	eend $?
+  ebegin "Reloading $name"
+  su ${command_user%:*} -s /bin/sh -c "$command reload $caddy_opts"
+  eend $?
 }
 
 stop_pre() {
-	if [ "$RC_CMD" = restart ]; then
-		checkconfig || return $?
-	fi
+  if [ "$RC_CMD" = restart ]; then
+    checkconfig || return $?
+  fi
 }
