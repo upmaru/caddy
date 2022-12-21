@@ -35,7 +35,7 @@ jobs:
           args: zip -r packages.zip /github/home/packages
 
       - name: 'Create Deployment'
-        uses: upmaru/pakman@develop
+        uses: upmaru/pakman@alpine-3.14
         with:
           command: 'create_deployment'
           archive: 'packages.zip'
