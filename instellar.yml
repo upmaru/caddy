@@ -26,8 +26,8 @@ run:
 
 
 source: |
-  Caddyfile
-  $pkgname.initd
+  ../../../Caddyfile
+  ../../../$pkgname.initd
 
 package: |
   install -Dm755 bin/caddy "$pkgdir"/usr/sbin/caddy
