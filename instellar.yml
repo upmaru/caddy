@@ -30,7 +30,7 @@ source: |
   ../../../$pkgname.initd
 
 package: |
-  ls
+  cd "$srcdir"
 
   install -Dm755 bin/caddy "$pkgdir"/usr/sbin/caddy
   setcap cap_net_bind_service=+ep "$pkgdir"/usr/sbin/caddy
