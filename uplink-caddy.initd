@@ -10,7 +10,7 @@ description_reload="Reload configuration without downtime"
 
 command=/usr/sbin/caddy
 command_args="run $caddy_opts"
-command_user=caddy:caddy
+command_user=uplink-caddy:uplink-caddy
 extra_commands="checkconfig"
 extra_started_commands="reload"
 
