@@ -7,11 +7,14 @@ dependencies:
 stack: alpine/3.14
 
 build:
-  destination: '.'
+  destination: 'build'
   command: |
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 
-    ~/go/bin/xcaddy build --with github.com/ss098/certmagic-s3
+    mkdir build
+    mv uplink-caddy.initd ./build
+
+    ~/go/bin/xcaddy build --output ./build/caddy --with github.com/ss098/certmagic-s3
 
 run: 
   name: uplink-caddy
