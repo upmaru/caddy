@@ -39,6 +39,7 @@ jobs:
           command: 'create_deployment'
           archive: 'packages.zip'
         env:
+          INSTELLAR_ENDPOINT: ${{secrets.INSTELLAR_ENDPOINT}}
           INSTELLAR_PACKAGE_TOKEN: ${{secrets.INSTELLAR_PACKAGE_TOKEN}}
           INSTELLAR_AUTH_TOKEN: ${{secrets.INSTELLAR_AUTH_TOKEN}}
 
