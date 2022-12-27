@@ -40,3 +40,16 @@ package: |
   install -Dm755 "$srcdir"/$pkgname.initd "$pkgdir"/etc/init.d/$pkgname
   install -Dm644 "$srcdir"/Caddyfile "$pkgdir"/etc/$pkgname/Caddyfile
 
+hook:
+  post-install: |
+    rc-update add uplink-caddy
+
+  pre-upgrade: |
+    rc-service uplink-caddy stop
+
+  post-upgrade: |
+    rc-service uplink-caddy start
+
+  post-deinstall: |
+    rc-service uplink-caddy stop
+    rc-update del uplink-caddy
