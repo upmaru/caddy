@@ -41,6 +41,11 @@ package: |
   setcap cap_net_bind_service=+ep "$pkgdir"/usr/sbin/caddy
 
   install -Dm644 "$srcdir"/Caddyfile "$pkgdir"/etc/$pkgname/Caddyfile
+  install -Dm755 "$srcdir"/$pkgname.initd "$pkgdir"/etc/init.d/$pkgname
+  install -Dm755 "$srcdir"/$pkgname.run "$pkgdir"/var/lib/$pkgname/service/run
+  install -Dm755 "$srcdir"/$pkgname.log "$pkgdir"/var/lib/$pkgname/service/log/run
+  install -Dm755 "$srcdir"/$pkgname.environment "$pkgdir"/var/lib/$pkgname/bin/environment
+  install -Dm755 "$srcdir"/$pkgname.env-exec "$pkgdir"/var/lib/$pkgname/bin/env-exec
 
 hook:
   post-install: |
