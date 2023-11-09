@@ -4,6 +4,10 @@ dependencies:
     - go
     - libcap
   runtime:
+    - bash
+    - curl
+    - s6
+    - jq
     - ca-certificates
     - uplink-caddy-openrc
     
