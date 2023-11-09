@@ -37,7 +37,7 @@ run:
       binary: caddy
       path: /usr/sbin
       start:
-        call: run -config /etc/uplink-caddy/config.json
+        call: run -c /etc/uplink-caddy/config.json
 
 package: |
   cd "$srcdir"
