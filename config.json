@@ -1,0 +1,10 @@
+{
+  "admin": {
+    "config": {
+      "load": {
+        "module": "http",
+        "url": "http://localhost:4080/caddy"
+      }
+    }
+  }
+}
