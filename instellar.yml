@@ -31,7 +31,7 @@ run:
     - name: logs
       binary: tail
       path: /usr/bin
-      call: tail -f -n 100 /var/log/uplink-caddy/current
+      call: -f -n 100 /var/log/uplink-caddy/current
   services:
     - name: server
       binary: caddy
