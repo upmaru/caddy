@@ -65,3 +65,17 @@ hook:
   post-deinstall: |
     rc-service uplink-caddy stop
     rc-update del uplink-caddy
+
+kits: 
+  - description: proxy service
+    main: true
+    name: standard
+    ports: 
+      - name: https
+        target: 443
+        source: 443
+        proxy_protocol: true
+      - name: http
+        target: 80
+        source: 80
+        proxy_protocol: true
