@@ -12,3 +12,10 @@ Modules included in this build configuration:
 ## Configuration
 
 You may notice the `config.json` and it has a reference to `http://localhost:4080/caddy`. This is `uplink`'s internal service that supplies caddy with the initial configuration. Since caddy will run inside the same container as `uplink` it has access to this internal service.
+
+Once caddy starts it will call the endpoing in the configuration to fetch it's initial configuration.
+
+## Supervision
+
+The build tool will make sure caddy is supervised by the `s6` supervisor and output logs to stdout. Logs will be handled by the `s6-log` program.
+
