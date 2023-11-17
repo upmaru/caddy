@@ -78,4 +78,4 @@ kits:
       - name: http
         target: 80
         source: 80
-        proxy_protocol: true
+        proxy_protocol: false
