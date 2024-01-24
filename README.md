@@ -18,4 +18,3 @@ Once caddy starts it will call the endpoint in the configuration to fetch it's i
 ## Supervision
 
 The build tool will make sure caddy is supervised by the `s6` supervisor and output logs to stdout. Logs will be handled by the `s6-log` program.
-
