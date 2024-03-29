@@ -8,6 +8,7 @@ Modules included in this build configuration:
 
 - [certmagic-s3](https://github.com/ss098/certmagic-s3) for storing ssl certificate in s3 bucket.
 - [cache-handler](https://github.com/caddyserver/cache-handler) for cache handling.
+- [cloudflare dns](https://github.com/caddy-dns/cloudflare) for DNS-01 challenge support.
 
 ## Configuration
 
