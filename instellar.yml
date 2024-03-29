@@ -23,7 +23,8 @@ build:
 
     ~/go/bin/xcaddy build --output ./bin/caddy \
       --with github.com/ss098/certmagic-s3 \
-      --with github.com/caddyserver/cache-handler
+      --with github.com/caddyserver/cache-handler \
+      --with github.com/caddy-dns/cloudflare
 
 run: 
   name: uplink-caddy
