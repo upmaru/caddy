@@ -19,7 +19,7 @@ jobs:
       - name: Setup Pakman
         uses: upmaru/pakman@v8
         with:
-          alpine: v3.19
+          alpine: v3.18
 
       - name: Bootstrap Configuration
         run: |
@@ -60,7 +60,7 @@ jobs:
       - name: Setup Pakman
         uses: upmaru/pakman@v8
         with:
-          alpine: v3.19
+          alpine: v3.18
 
       - name: Merge Artifact
         run: |
