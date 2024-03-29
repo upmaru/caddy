@@ -17,7 +17,7 @@ build:
   destinations:
     - build
   command: |
-    export CADDY_VERSION=v2.7.5
+    export CADDY_VERSION=v2.7.4
 
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 
