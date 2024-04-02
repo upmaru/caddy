@@ -17,7 +17,7 @@ build:
   destinations:
     - build
   command: |
-    export CADDY_VERSION=v2.7.4
+    export CADDY_VERSION=v2.6.4
 
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 
@@ -26,7 +26,7 @@ build:
     ~/go/bin/xcaddy build --output ./bin/caddy \
       --with github.com/ss098/certmagic-s3 \
       --with github.com/caddyserver/cache-handler@v0.9.0 \
-      --with github.com/caddy-dns/cloudflare@bfe272c8525b6dd8248fcdddb460fd6accfc4e84
+      --with github.com/caddy-dns/cloudflare@a9d3ae2690a1d232bc9f8fc8b15bd4e0a6960eec
 
 run: 
   name: uplink-caddy
