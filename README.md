@@ -8,6 +8,7 @@ Modules included in this build configuration:
 
 - [certmagic-s3](https://github.com/ss098/certmagic-s3) for storing ssl certificate in s3 bucket.
 - [cache-handler](https://github.com/caddyserver/cache-handler) for cache handling.
+- [cloudflare dns](https://github.com/caddy-dns/cloudflare) for DNS-01 challenge support.
 
 ## Configuration
 
@@ -18,4 +19,3 @@ Once caddy starts it will call the endpoint in the configuration to fetch it's i
 ## Supervision
 
 The build tool will make sure caddy is supervised by the `s6` supervisor and output logs to stdout. Logs will be handled by the `s6-log` program.
-
